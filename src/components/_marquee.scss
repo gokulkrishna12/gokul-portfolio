@@ -1,0 +1,48 @@
+@import "../variables";
+
+.marquee-section {
+  background: #080b13;
+  padding: 1.75rem 0;
+  border-top: 1px solid rgba(239, 35, 60, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  position: relative;
+
+  .marquee-track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    will-change: transform;
+
+    &.scroll-left {
+      animation: marqueeLeft 28s linear infinite;
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e2e8f0;
+
+    .dot-separator {
+      color: $crimson-vibrant;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+  }
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

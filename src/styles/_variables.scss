@@ -1,0 +1,26 @@
+// Theme Colors
+$crimson-primary: #d90429;
+$crimson-vibrant: #ef233c;
+$crimson-dark: #8d0801;
+
+$bg-onyx: #0b0f19;
+$bg-surface: #111827;
+$bg-card: rgba(17, 24, 39, 0.7);
+
+$text-primary: #ffffff;
+$text-secondary: #94a3b8;
+$text-muted: #64748b;
+
+$border-subtle: rgba(255, 255, 255, 0.08);
+$border-crimson-glow: rgba(239, 35, 60, 0.35);
+
+// Typography & Fonts
+$font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+
+// Transitions & Radius
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 24px;
+$radius-full: 9999px;
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
