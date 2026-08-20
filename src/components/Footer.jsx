@@ -38,13 +38,29 @@ export default function Footer() {
             
             {/* Brand-colored Social Icons */}
             <div className="footer-social-icons d-flex gap-3 mt-3">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="icon-btn icon-github" title="GitHub">
+              <a 
+                href="https://github.com/gokulkrishna12" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="icon-btn icon-github" 
+                title="GitHub"
+              >
                 <GithubIcon size={17} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="icon-btn icon-linkedin" title="LinkedIn">
+              <a 
+                href="https://www.linkedin.com/in/gokulkrishna08" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="icon-btn icon-linkedin" 
+                title="LinkedIn"
+              >
                 <LinkedinIcon size={17} />
               </a>
-              <a href="mailto:gokuldinesh32@gmail.com" className="icon-btn icon-email" title="Email">
+              <a 
+                href="mailto:gokuldinesh32@gmail.com" 
+                className="icon-btn icon-email" 
+                title="Email"
+              >
                 <Mail size={17} />
               </a>
             </div>
