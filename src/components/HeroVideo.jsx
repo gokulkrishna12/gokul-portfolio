@@ -39,23 +39,33 @@ export default function HeroVideo() {
 
             <h1 className="hero-title">
               Hi, I'm <span className="highlight-name">Gokulkrishna</span>
-              <span className="highlight-role">Java Full-Stack Developer</span>
+              <span className="highlight-role">Full Stack Java & MERN Developer</span>
             </h1>
 
             <p className="hero-bio">
-              Architecting scalable distributed web apps with <strong>Java 17, Spring Boot, React.js</strong>, and <strong>AWS Cloud Services</strong>, powered by modern Generative AI integrations.
+              Architecting scalable distributed web apps with <strong>Java 17, Spring Boot, React.js, Node.js,Express.js</strong>, and <strong>MongoDB/MySQL</strong>. Powered by modern Generative AI integrations and AWS Cloud Services.
             </p>
 
             <div className="cta-buttons">
               <a href="#projects" className="btn-primary-glow">
                 Explore Projects <ArrowRight size={17} className="ms-2" />
               </a>
+              
               <a href="#contact" className="btn-glass">
                 <Send size={16} className="me-2" /> Contact Me
               </a>
-              <a href="/resume.pdf" download className="btn-glass">
-                <Download size={16} className="me-2" /> Resume
-              </a>
+              
+              {/* Dual Resume Download Buttons */}
+              <div className="d-flex gap-3 mt-3 w-100 flex-wrap">
+                <a href="/java-resume.pdf" download className="btn-glass flex-grow-1 justify-content-center">
+                  <Download size={16} className="me-2" /> Java Resume
+                </a>
+                
+                <a href="/mern-resume.pdf" download className="btn-glass flex-grow-1 justify-content-center">
+                  <Download size={16} className="me-2" /> MERN Resume
+                </a>
+              </div>
+
             </div>
           </div>
 

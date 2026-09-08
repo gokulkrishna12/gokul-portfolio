@@ -33,7 +33,7 @@ export default function Footer() {
               <h4 className="footer-brand-title mb-0">GokulKrishna</h4>
             </div>
             <p className="footer-bio-text">
-              Full-Stack Software Engineer architecting scalable Spring Boot distributed systems, cloud infrastructure on AWS, and reactive React applications.
+              Dual-Stack Software Engineer architecting scalable Java Spring Boot systems, robust MERN (Node.js/MongoDB) backends, and reactive React applications on AWS.
             </p>
             
             {/* Brand-colored Social Icons */}
@@ -74,7 +74,8 @@ export default function Footer() {
               <li><a href="#journey">Journey</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="/resume.pdf" download>Resume</a></li>
+              <li><a href="/java-resume.pdf" download>Java Resume</a></li>
+              <li><a href="/mern-resume.pdf" download>MERN Resume</a></li>
             </ul>
           </div>
 
@@ -83,10 +84,10 @@ export default function Footer() {
             <h5 className="footer-col-heading">Core Skills</h5>
             <ul className="footer-links-list">
               <li><span>Java 17 & Spring Boot</span></li>
-              <li><span>React.js & Sass</span></li>
-              <li><span>AWS (EC2 & RDS)</span></li>
-              <li><span>MySQL & Indexing</span></li>
-              <li><span>Gemini AI Integration</span></li>
+              <li><span>Node.js & Express.js</span></li>
+              <li><span>React.js & UI Architecture</span></li>
+              <li><span>MongoDB & MySQL</span></li>
+              <li><span>AWS Cloud & Deployments</span></li>
               <li><span>REST APIs & Security</span></li>
             </ul>
           </div>
@@ -124,7 +125,7 @@ export default function Footer() {
               Developed by <strong className="text-white">GokulKrishna</strong>
             </span>
             <button onClick={scrollToTop} className="btn-scroll-top-mini" title="Back to top">
-              <ArrowUp size={15} />
+              <ArrowUp size={15} color="red" />
             </button>
           </div>
         </div>

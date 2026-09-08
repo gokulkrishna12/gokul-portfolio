@@ -1,27 +1,27 @@
 import React from 'react';
-import { Server, Layout, Cloud, Database, Sparkles, Terminal } from 'lucide-react';
+import { Server, Layout, Cloud, Database } from 'lucide-react';
 
 export default function TechStack() {
   const categories = [
     {
       title: 'Backend & Distributed Systems',
       icon: Server,
-      skills: ['Java 17', 'Spring Boot', 'Spring Security (JWT)', 'Spring Data JPA', 'RESTful APIs', 'Microservices Architecture'],
+      skills: ['Java 17', 'Spring Boot', 'Node.js', 'Express.js', 'Spring Security (JWT)', 'RESTful APIs', 'Microservices'],
     },
     {
       title: 'Frontend & UI Engineering',
       icon: Layout,
-      skills: ['React.js', 'Vite', 'Sass / SCSS', 'Bootstrap 5', 'Responsive Design', 'State Management'],
+      skills: ['React.js 18', 'Vite', 'React Router', 'Sass / SCSS', 'Axios / Context API', 'Responsive UI'],
     },
     {
       title: 'Cloud, DevOps & Hosting',
       icon: Cloud,
-      skills: ['AWS EC2', 'AWS RDS', 'AWS CloudFront CDN', 'Docker Containers', 'Netlify CI/CD', 'Git / GitHub'],
+      skills: ['AWS EC2', 'AWS RDS', 'AWS CloudFront CDN', 'Docker Containers', 'GitHub Actions CI/CD', 'Vercel / Render'],
     },
     {
       title: 'Databases & AI Workflows',
       icon: Database,
-      skills: ['MySQL Architecture', 'Index Optimization', 'Google Gemini AI API', 'Jackson JSON Streaming', 'Schema Normalization'],
+      skills: ['MySQL Architecture', 'MongoDB (Atlas)', 'Mongoose ODM', 'Index Optimization', 'Google Gemini AI API', 'Jackson JSON'],
     },
   ];
 
