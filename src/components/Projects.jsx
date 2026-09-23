@@ -14,13 +14,18 @@ export default function Projects() {
         <div className="section-title-wrap text-center mb-5">
           <span className="section-tag">PORTFOLIO SHOWCASE</span>
           <h2 className="section-heading">Featured Engineering</h2>
-          <p className="section-subtext">Scalable full-stack systems built with Java, React, Cloud, and Generative AI.</p>
+          <p className="section-subtext">Scalable full-stack systems built with Java, React, MERN, Cloud, and Generative AI.</p>
         </div>
 
         {/* Project Cards Grid */}
         <div className="projects-grid">
           {PROJECTS.map((project) => (
-            <div key={project.id} className={`project-card glass-panel ${project.featured ? 'is-featured' : ''}`}>
+            <div 
+              key={project.id} 
+              className={`project-card glass-panel ${project.featured ? 'is-featured' : ''}`}
+              onClick={() => setSelectedProject(project)}
+              style={{ cursor: 'pointer' }}
+            >
               
               <div>
                 <div className="card-top">
@@ -42,28 +47,58 @@ export default function Projects() {
               <div className="card-footer-block">
                 
                 <div className="repo-links-row">
-                  <a href={project.githubFrontend} target="_blank" rel="noreferrer" className="repo-pill" title="Frontend GitHub Repo">
-                    <Code2 size={14} className="text-danger" />
-                    <span>Frontend</span>
-                  </a>
-                  <a href={project.githubBackend} target="_blank" rel="noreferrer" className="repo-pill" title="Backend GitHub Repo">
-                    <Server size={14} className="text-danger" />
-                    <span>Backend</span>
-                  </a>
+                  {project.githubFrontend && project.githubFrontend !== '#' && (
+                    <a 
+                      href={project.githubFrontend} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="repo-pill" 
+                      title="Frontend GitHub Repo"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Code2 size={14} className="text-danger" />
+                      <span>Frontend</span>
+                    </a>
+                  )}
+                  
+                  {project.githubBackend && project.githubBackend !== '#' && (
+                    <a 
+                      href={project.githubBackend} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="repo-pill" 
+                      title="Backend GitHub Repo"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Server size={14} className="text-danger" />
+                      <span>Backend</span>
+                    </a>
+                  )}
                 </div>
 
                 <div className="card-bottom-actions">
                   <button
                     className="btn-architecture"
-                    onClick={() => setSelectedProject(project)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProject(project);
+                    }}
                   >
                     <Layers size={14} /> Architecture
                   </button>
 
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-live-demo">
-                    <span>Live Demo</span>
-                    <ExternalLink size={14} />
-                  </a>
+                  {project.liveUrl && project.liveUrl !== '#' && (
+                    <a 
+                      href={project.liveUrl} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="btn-live-demo"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span>{project.liveUrl.includes('.apk') ? 'Download APK' : 'Live Demo'}</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                 </div>
 
               </div>

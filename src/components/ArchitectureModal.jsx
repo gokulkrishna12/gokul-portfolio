@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, Sparkles, Github, Server, ExternalLink, Download } from 'lucide-react';
+import { X, CheckCircle2, Sparkles, Code2, Server, ExternalLink, Download } from 'lucide-react';
 
 export default function ArchitectureModal({ project, onClose }) {
   if (!project) return null;
@@ -38,44 +38,71 @@ export default function ArchitectureModal({ project, onClose }) {
           </ul>
         </div>
 
-        {/* Modal Footer Actions - Perfectly Styled & Aligned */}
-        <div className="modal-footer-custom d-flex flex-wrap gap-2 justify-content-between align-items-center pt-3 mt-2 border-top border-secondary">
-          <div className="d-flex flex-wrap gap-2">
-            
-            {/* Frontend Repo */}
+        {/* Modal Footer Actions */}
+        <div 
+          className="modal-footer-custom" 
+          style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: '12px', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            marginTop: '20px', 
+            paddingTop: '20px', 
+            borderTop: '1px solid rgba(255,255,255,0.1)' 
+          }}
+        >
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {project.githubFrontend && project.githubFrontend !== '#' && (
-              <a href={project.githubFrontend} target="_blank" rel="noreferrer" className="btn-modal-code">
-                <Github size={15} className="me-1" /> Frontend
+              <a href={project.githubFrontend} target="_blank" rel="noreferrer" className="btn-modal-code" style={{ textDecoration: 'none' }}>
+                <Code2 size={15} style={{ marginRight: '6px' }} /> Frontend
               </a>
             )}
-
-            {/* Backend Repo */}
+            
             {project.githubBackend && project.githubBackend !== '#' && (
-              <a href={project.githubBackend} target="_blank" rel="noreferrer" className="btn-modal-code">
-                <Github size={15} className="me-1" /> Backend
+              <a href={project.githubBackend} target="_blank" rel="noreferrer" className="btn-modal-code" style={{ textDecoration: 'none' }}>
+                <Server size={15} style={{ marginRight: '6px' }} /> Backend
               </a>
             )}
 
-            {/* Tech Docs PDF */}
+            {/* Tech Docs PDF Button */}
             {project.pdfDocs && (
-              <a href={project.pdfDocs} download className="btn-modal-code text-info" style={{ borderColor: 'rgba(56, 189, 248, 0.4)' }}>
-                <Download size={15} className="me-1" /> Docs (PDF)
+              <a href={project.pdfDocs} download className="btn-modal-code" style={{ textDecoration: 'none', color: '#38bdf8', borderColor: 'rgba(56, 189, 248, 0.4)' }}>
+                <Download size={15} style={{ marginRight: '6px' }} /> Docs (PDF)
               </a>
             )}
           </div>
 
-          {/* Gorgeous Glowing Open Live / APK Button */}
+          {/* BEAUTIFUL GLOWING RED BUTTON (Forced with Inline Styles) */}
           {project.liveUrl && project.liveUrl !== '#' && (
             <a 
               href={project.liveUrl} 
               target="_blank" 
               rel="noreferrer" 
-              className="btn btn-danger px-4 py-2 rounded-pill fw-bold text-decoration-none d-flex align-items-center gap-2 shadow-lg"
-              style={{ 
-                background: 'linear-gradient(135deg, #ef233c 0%, #d90429 100%)', 
-                border: 'none',
-                boxShadow: '0 4px 20px rgba(239, 35, 60, 0.5)',
-                transition: 'transform 0.2s ease'
+              style={{
+                background: 'linear-gradient(135deg, #ff4b4b 0%, #d90429 100%)',
+                color: '#ffffff',
+                padding: '10px 24px',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 15px rgba(217, 4, 41, 0.5)',
+                fontSize: '14px',
+                border: '1px solid #ff4b4b',
+                cursor: 'pointer',
+                marginLeft: 'auto',
+                transition: 'all 0.2s ease-in-out'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(217, 4, 41, 0.7)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(217, 4, 41, 0.5)';
               }}
             >
               <ExternalLink size={16} /> 
