@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, Sparkles, Code2, Server, ExternalLink } from 'lucide-react';
+import { X, CheckCircle2, Sparkles, Github, Server, ExternalLink, Download } from 'lucide-react';
 
 export default function ArchitectureModal({ project, onClose }) {
   if (!project) return null;
@@ -38,19 +38,50 @@ export default function ArchitectureModal({ project, onClose }) {
           </ul>
         </div>
 
-        {/* Modal Footer Actions */}
-        <div className="modal-footer-custom d-flex flex-wrap gap-2 justify-content-between align-items-center">
-          <div className="d-flex gap-2">
-            <a href={project.githubFrontend} target="_blank" rel="noreferrer" className="btn-modal-code">
-              <Code2 size={15} className="me-1" /> Frontend Repo
-            </a>
-            <a href={project.githubBackend} target="_blank" rel="noreferrer" className="btn-modal-code">
-              <Server size={15} className="me-1" /> Backend Repo
-            </a>
+        {/* Modal Footer Actions - Perfectly Styled & Aligned */}
+        <div className="modal-footer-custom d-flex flex-wrap gap-2 justify-content-between align-items-center pt-3 mt-2 border-top border-secondary">
+          <div className="d-flex flex-wrap gap-2">
+            
+            {/* Frontend Repo */}
+            {project.githubFrontend && project.githubFrontend !== '#' && (
+              <a href={project.githubFrontend} target="_blank" rel="noreferrer" className="btn-modal-code">
+                <Github size={15} className="me-1" /> Frontend
+              </a>
+            )}
+
+            {/* Backend Repo */}
+            {project.githubBackend && project.githubBackend !== '#' && (
+              <a href={project.githubBackend} target="_blank" rel="noreferrer" className="btn-modal-code">
+                <Github size={15} className="me-1" /> Backend
+              </a>
+            )}
+
+            {/* Tech Docs PDF */}
+            {project.pdfDocs && (
+              <a href={project.pdfDocs} download className="btn-modal-code text-info" style={{ borderColor: 'rgba(56, 189, 248, 0.4)' }}>
+                <Download size={15} className="me-1" /> Docs (PDF)
+              </a>
+            )}
           </div>
-          <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-primary-glow btn-sm py-2 px-3">
-            <ExternalLink size={14} className="me-1" /> Open Live
-          </a>
+
+          {/* Gorgeous Glowing Open Live / APK Button */}
+          {project.liveUrl && project.liveUrl !== '#' && (
+            <a 
+              href={project.liveUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn btn-danger px-4 py-2 rounded-pill fw-bold text-decoration-none d-flex align-items-center gap-2 shadow-lg"
+              style={{ 
+                background: 'linear-gradient(135deg, #ef233c 0%, #d90429 100%)', 
+                border: 'none',
+                boxShadow: '0 4px 20px rgba(239, 35, 60, 0.5)',
+                transition: 'transform 0.2s ease'
+              }}
+            >
+              <ExternalLink size={16} /> 
+              {project.liveUrl.includes('.apk') ? 'Download APK' : 'Open Live Demo'}
+            </a>
+          )}
         </div>
 
       </div>

@@ -1,23 +1,24 @@
 export const PROJECTS = [
-  // --- JAVA PROJECTS ---
+  // --- JAVA / AWS PROJECTS ---
   {
     id: 'gk-shopease',
     title: 'GK ShopEase',
     category: 'AWS CloudFront & Generative AI',
-    status: 'Live on AWS CloudFront',
+    status: 'Live on AWS',
     featured: true,
     description: 'Full-stack AI-driven e-commerce platform with real-time product insights, secure JWT authentication, and high-availability cloud architecture.',
     techStack: ['Java 17', 'Spring Boot', 'React.js', 'MySQL', 'AWS EC2', 'AWS RDS', 'Gemini AI', 'CloudFront'],
     liveUrl: 'https://d1637jx31wm2nm.cloudfront.net',
     githubFrontend: 'https://github.com/gokulkrishna12/E-Commerce-FRONTEND',
     githubBackend: 'https://github.com/gokulkrishna12/E-Commerce-BACKEND',
+    pdfDocs: '/docs/gk-shopease-architecture.pdf', // PDF Documentation
     architecture: {
       tagline: 'Multi-Tier AWS Cloud Architecture with AI Stream',
-      overview: 'High-speed React SPA distributed via AWS CloudFront CDN, routing secure API requests to a Spring Boot backend on EC2, integrated with an isolated AWS RDS MySQL instance and Google Gemini AI.',
+      overview: 'High-speed React SPA distributed via AWS CloudFront CDN, routing secure API requests to a Spring Boot backend on EC2, integrated with an isolated AWS RDS MySQL instance and Google Gemini AI[cite: 10].',
       points: [
-        'Spring Security 6 with stateless JWT authentication & role-based route guards.',
-        'Gemini API integration with custom Jackson ObjectMapper streaming parsers.',
-        'AWS CloudFront + S3 static distribution paired with AWS RDS relational database.'
+        'Spring Security 6 with stateless JWT authentication & role-based route guards[cite: 10].',
+        'Gemini API integration with custom Jackson ObjectMapper streaming parsers[cite: 10].',
+        'AWS CloudFront + S3 static distribution paired with AWS RDS relational database[cite: 10].'
       ]
     }
   },
@@ -25,7 +26,7 @@ export const PROJECTS = [
     id: 'expense-tracker',
     title: 'Smart Expense Tracker',
     category: 'Full-Stack Analytics',
-    status: 'Live on Vercel/Railway',
+    status: 'Live on Vercel',
     featured: false,
     description: 'Financial analytics dashboard with monthly burn-rate calculators, category visualizers, and transactional aggregation endpoints.',
     techStack: ['React.js', 'Spring Boot', 'Chart.js', 'MySQL', 'Sass', 'REST APIs'],
@@ -46,7 +47,7 @@ export const PROJECTS = [
     id: 'employee-mgmt',
     title: 'Enterprise Employee Portal',
     category: 'Enterprise RBAC System',
-    status: 'Live on Vercel/Railway',
+    status: 'Live on Vercel',
     featured: false,
     description: 'Role-based access control portal managing department hierarchies, payroll records, and secure employee audit logs.',
     techStack: ['Java', 'Spring Data JPA', 'React.js', 'MySQL', 'Bootstrap', 'REST APIs'],
@@ -64,25 +65,48 @@ export const PROJECTS = [
     }
   },
 
-  // --- MERN STACK PROJECTS ---
+  // --- MERN STACK & MOBILE PROJECTS ---
+  {
+    id: 'gks-fitness-mobile',
+    title: "GK's Fitness Shop (Mobile App)",
+    category: 'React Native & AWS',
+    status: 'Live APK Available',
+    featured: true,
+    description: 'Premium full-stack mobile e-commerce application for Android built with React Native and Expo, featuring real-time state management and secure AWS backend[cite: 7].',
+    techStack: ['React Native', 'Expo', 'Node.js', 'Express.js', 'MongoDB', 'AWS EC2', 'Razorpay', 'EAS'],
+    liveUrl: 'https://expo.dev/artifacts/eas/agKKEmsBMTRxwjEH8VtWbEzEzWJm-DLgMn3h6KTPtwA.apk',
+    githubFrontend: 'https://github.com/gokulkrishna12/GK-s-Fitness-shop-APP',
+    githubBackend: 'https://github.com/gokulkrishna12/GK-s-Fitness-shop-APP',
+    pdfDocs: '/docs/gks-fitness-shop-docs.pdf', // PDF Documentation
+    architecture: {
+      tagline: 'Mobile-First E-Commerce with EAS OTA Updates',
+      overview: 'Android e-commerce application built with React Native and Expo Router, connected to a scalable Node.js/Express/MongoDB backend on AWS EC2 with Razorpay payments and EAS CI/CD[cite: 7].',
+      points: [
+        'Razorpay payment gateway integration with cryptographic signature verification[cite: 7].',
+        'React Context API and AsyncStorage for robust local cart and wishlist syncing[cite: 7].',
+        'Expo Application Services (EAS Build & Update) for instant OTA JavaScript bug fixes[cite: 7].'
+      ]
+    }
+  },
   {
     id: 'gks-fitness-shop',
-    title: "GK's Fitness Shop",
+    title: "GK's Fitness Shop (Web)",
     category: 'E-Commerce Platform',
     status: 'Live on AWS CloudFront',
-    featured: true,
-    description: 'Responsive, mobile-first e-commerce platform tailored for fitness enthusiasts with secure checkout and real-time inventory management.',
+    featured: false,
+    description: 'Responsive, mobile-first e-commerce web platform tailored for fitness enthusiasts with secure checkout and real-time inventory management[cite: 9].',
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS EC2', 'AWS CloudFront', 'Razorpay'],
     liveUrl: 'https://d3tcsjoldbupsr.cloudfront.net/',
-    githubFrontend: 'https://github.com/gokulkrishna12/Gk-s-Fitness-Shop-FRONTEND',
-    githubBackend: 'https://github.com/gokulkrishna12/Gk-s-Fitness-Shop-BACKEND',
+    githubFrontend: 'https://github.com/gokulkrishna12/Gk-s-Fitness-shop-FRONTEND',
+    githubBackend: 'https://github.com/gokulkrishna12/Gk-s-Fitness-shop-BACKEND',
+    pdfDocs: '/docs/gks-fitness-shop-docs.pdf',
     architecture: {
       tagline: 'AWS Hosted MERN E-Commerce with Payment Gateway',
-      overview: 'Architected a scalable deployment pipeline by hosting the Node.js/Express backend on AWS EC2 with an Nginx reverse proxy, and globally distributing the frontend via AWS CloudFront.',
+      overview: 'Architected a scalable deployment pipeline by hosting the Node.js/Express backend on AWS EC2 with an Nginx reverse proxy, and globally distributing the frontend via AWS CloudFront[cite: 9].',
       points: [
-        'Integrated Razorpay API with cryptographic signature verification for secure checkout.',
-        'Engineered secure, real-time inventory management logic in MongoDB Atlas.',
-        'Custom OTP-based user authentication flow ensuring data security.'
+        'Integrated Razorpay API with cryptographic signature verification for secure checkout[cite: 9].',
+        'Engineered secure, real-time inventory management logic in MongoDB Atlas[cite: 9].',
+        'Custom OTP-based user authentication flow ensuring data security[cite: 9].'
       ]
     }
   },
@@ -104,27 +128,6 @@ export const PROJECTS = [
         'Designed a fully responsive, mobile-first UI utilizing custom SCSS and glassmorphism principles.',
         'Stateless JWT-based authorization securing sensitive backend endpoints.',
         'Seamless cross-device compatibility with optimized React state management.'
-      ]
-    }
-  },
-  {
-    id: 'inventory-mgmt-mern',
-    title: 'Inventory Management System',
-    category: 'Full Stack Application',
-    status: 'Live on Vercel/Render',
-    featured: false,
-    description: 'End-to-end inventory control web application, delivering a streamlined user experience for comprehensive stock management.',
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Axios'],
-    liveUrl: 'https://inventory-management-frontend-one-lac.vercel.app/',
-    githubFrontend: 'https://github.com/gokulkrishna12/Inventory-Management-FRONTEND',
-    githubBackend: 'https://github.com/gokulkrishna12/Inventory-Management-BACKEND',
-    architecture: {
-      tagline: 'Decoupled Client-Server MERN Architecture',
-      overview: 'Maintained a clean, decoupled client-server architecture, utilizing Axios for asynchronous API communication and streamlining deployment.',
-      points: [
-        'Developed scalable backend CRUD RESTful APIs to process real-time updates.',
-        'Seamless MongoDB Atlas integration for persistent inventory state.',
-        'Optimized client-side rendering utilizing React Router and Vite.'
       ]
     }
   }
